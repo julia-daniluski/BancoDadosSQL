@@ -1,26 +1,31 @@
-# Passo a passo: criação de um banco de dados
-Tutorial de como criar um banco de dados SQL que organiza as informações de 'livros', 'editora', 'autores' e 'assuntos'.
-Este guia será dividido em etapas para demonstrar desde a criação de tabelas, chaves e até manipulações/consulta de dados.
+
+# Passo a passo: Criação de um banco de dados
+
+Tutorial de como criar um banco de dados SQL que organiza as informações de 'livros', 'editora', 'autores' e 'assuntos'. Este guia será dividido em etapas para demonstrar desde a criação de tabelas, chaves e até manipulação/consulta de dados.
 
 ## Resumo de uma estrutura SQL
+* __CREATE__ - Para criar banco de dados
 
-Criar tabela: CREATE DATABASE;
-Alterar coluna: ALTER TABLE;
-Alterar dado: UPDATE TABLE;
-Remover tabelas/bancos de dados: DROP;
-Adicionar registros na tabela: INSERT;
-Remover registros: DELETE;
-Consultar e visualizar dados: SELECT.
+* __ALTER__ - Modificar e alterar colunas
 
-## Passo 1: criação do banco de dados e das tabelas
+* __DROP__ - Para remover tabelas e banco
 
+* __INSERT__ - Inserir  os dados na tabela
+
+* __UPDATE__ - Atualiza registros
+
+* __DELETE__ - Remover registro
+
+* __SELECT__ - Para Consultar e visualizar dados
+
+## Passo 1: criação do Banco de Dados e das Tabelas
 #### 1.1 Criando o DB
 ```
 CREATE DATABASE biblioteca;
 USE biblioteca;
 ```
 
-#### 1.2 Criando a tabela "editora"
+#### 1.2 Criando a tabela 'editora'
 ```
 CREATE TABLE editora(
     id_editora INT PRIMARY KEY AUTO_INCREMENT,
@@ -29,32 +34,31 @@ CREATE TABLE editora(
 );
 ```
 
-#### 1.3 Criando a tabela "autor"
+#### 1.3 Criando a tabela 'autor'
 ```
 CREATE TABLE autor(
     id_autor INT PRIMARY KEY AUTO_INCREMENT,
-    nome_autor VARCHAR(200) NOT NULL,
+    nome_autor VARCHAR(200),
     data_nascimento DATE
 );
 ```
 
-#### 1.4 Criando a tabela "assunto"
+#### 1.4 Criando a tabela'assunto'
 ```
-CREATE TABLE assunto(
+CREATE TABLE assunto (
     id_assunto INT PRIMARY KEY AUTO_INCREMENT,
-    descricao_assunto VARCHAR(1000) NOT NULL
+    descricao_assunto VARCHAR(500) NOT NULL
 );
 ```
 
-#### 1.5 Criando a tabela "livros"
+#### 1.5 Criando a tabela 'livro'
 ```
-CREATE TABLE livros(
-    id_livros INT PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(200) NOT NULL,
+CREATE TABLE livro(
+    id_livro INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(150) NOT NULL,
     ano_publicacao YEAR,
-    FOREING KEY(editora) REFERENCES editora (id_editora),
-    FOREING KEY(autor) REFERENCES autor (id_autor),
-    FOREING KEY(assunto) REFERENCES assunto (id_assunto)
+    FOREING KEY(editora) REFERENCES editora(id_editora),
+    FOREING KEY(id_autor) REFERENCES autor (id_autor),
+    FOREING KEY(id_assunto) REFERENCES assunto (id_assunto)
 );
 ```
-
