@@ -52,8 +52,12 @@ CREATE TABLE assunto(
 
 ```
 CREATE TABLE livros(
-    id_assunto INT PRIMARY KEY AUTO_INCREMENT,
-    descricao_assunto VARCHAR(1000) NOT NULL
+    id_livros INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(200) NOT NULL,
+    ano_publicacao YEAR,
+    FOREING KEY(editora) REFERENCES editora (id_editora),
+    FOREING KEY(autor) REFERENCES autor (id_autor),
+    FOREING KEY(assunto) REFERENCES assunto (id_assunto)
 );
 ```
 
