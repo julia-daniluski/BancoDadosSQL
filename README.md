@@ -93,10 +93,40 @@ Neste exemplo vamos remover a tabela extra.
 DROP TABLE extra;`
 ```
 
-## Passo 4: remover tabela usando 'DROP'
-Se precisar remover uma tabela usamos o comando 'DROP'.
-Neste exemplo vamos remover a tabela extra.
+## Passo 4: Inserir dados usando 'INSERT'
+Agora que as tabelas estão prontas, vamos inserir dados nelas.
 
+#### 4.1 inserindo dados na tabela 'editora'
 ```SQL
-DROP TABLE extra;`
+INSERT INTO editora (nome_editora, pais) VALUES
+('Editora Intrinseca', 'Brasil'),
+('Editora Geografica', 'Brasil'),
+('Editora Beta', 'Portugal')
+;
+```
+
+#### 4.2 inserindo dados na tabela 'autor'
+```SQL
+INSERT INTO autor(nome_autor, data_nascimento, email) VALUES
+('Jorge Amado', '1912-08-10','jorginho@email.com'),
+('Machado de Assis', '1939-06-21','machadinho@email.com'),
+('Suzanne Collins', '1962-08-10', 'suzannetordo@email.com'),
+('Rick Riordan','1964-06-05', 'peixinhodourado@email.com');
+```
+#### 4.2 inserindo dados na tabela 'assunto'
+```SQL
+INSERT INTO assunto(descricao_assunto) VALUES
+('Aventura'),
+('Romance'),
+('Terror'),
+('Fantasia');
+```
+
+#### 4.1 inserindo dados na tabela 'editora'
+```SQL
+INSERT INTO livro (titulo, ano_publicacao, editora, autor, assunto) VALUES
+('Capitães de Areia', 1937, 2, 1, 1 ),
+('Jogos Vorazes', 2008, 1, 3, 1),
+('Percy Jackson', 2005, 2, 4, 4 ),
+('Memorias Postumas de Bras Cubas', 1881, 3, 2, 2 );
 ```
