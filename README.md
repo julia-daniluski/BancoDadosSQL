@@ -130,3 +130,43 @@ INSERT INTO livro (titulo, ano_publicacao, editora, autor, assunto) VALUES
 ('Percy Jackson', 2005, 2, 4, 4 ),
 ('Memorias Postumas de Bras Cubas', 1881, 3, 2, 2 );
 ```
+
+## Passo 5: atualizando os dados usando 'UPDATE'
+Podemos atualizar os dados com o comando UPDATE.
+Vamos corrigir a data de publicação do livro 'Capitães de Areia'.
+
+```SQL
+UPDATE livro
+SET ano_publicacao = 1938;
+WHERE titulo = 'Capitães da Areia`;
+```
+
+### Passo 6: Excluindo os dados usando 'DELETE'
+Para remover os registros de uma tabela usamos o comando 'DELETE'.
+Vamos excluir o livro Memorias Postumas de Bras cubas'.
+
+```SQL
+DELETE FROM livro
+WHERE id_livro = 8;
+```
+
+## Passo 7:Consultando os dados usando 'SELECT'
+É possivel selecionar os dados para visualizar da forma como quiser.
+Para isso usamos o comando 'SELECT'
+
+#### Passo 7.1:Selecionar todos os livros com suas editoras e autores
+Vamos usar dados das tabelas 'livros', 'editora', 'autor' e ' assunto' usando o comando 'JOIN'
+
+```SQL
+DELETE FROM livro
+WHERE id_livro = 8;
+SELECT livro.titulo AS nome, 
+editora.nome_editora AS editora, 
+autor.nome_autor AS autor, 
+assunto.descricao_assunto AS tema, 
+livro.ano_publicacao AS ano
+FROM livro
+JOIN editora ON livro.editora = editora.id_editora
+JOIN autor ON livro.autor = autor.id_autor
+JOIN assunto ON livro.assunto = assunto.id_assunto;
+```
