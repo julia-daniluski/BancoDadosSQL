@@ -113,7 +113,7 @@ INSERT INTO autor(nome_autor, data_nascimento, email) VALUES
 ('Suzanne Collins', '1962-08-10', 'suzannetordo@email.com'),
 ('Rick Riordan','1964-06-05', 'peixinhodourado@email.com');
 ```
-#### 4.2 inserindo dados na tabela 'assunto'
+#### 4.3 inserindo dados na tabela 'assunto'
 ```SQL
 INSERT INTO assunto(descricao_assunto) VALUES
 ('Aventura'),
@@ -122,7 +122,7 @@ INSERT INTO assunto(descricao_assunto) VALUES
 ('Fantasia');
 ```
 
-#### 4.1 inserindo dados na tabela 'editora'
+#### 4.4 inserindo dados na tabela 'editora'
 ```SQL
 INSERT INTO livro (titulo, ano_publicacao, editora, autor, assunto) VALUES
 ('Capitães de Areia', 1937, 2, 1, 1 ),
