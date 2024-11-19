@@ -149,7 +149,7 @@ Vamos excluir o livro Memorias Postumas de Bras cubas'.
 DELETE FROM livro
 WHERE id_livro = 8;
 ```
-## Passo 6.1: Excluir tudo da tabela sem o id
+#### Passo 6.1: Excluir tudo da tabela sem o id
 ```SQL
 DELETE FROM livro
 ```
